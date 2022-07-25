@@ -1,3 +1,3 @@
-const API_URL = 'http://xyzmobileapp.nl:3000/';
+const API_URL = '';
 
 export default API_URL;
