@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Page2 = () => {
+const Dashboard = () => {
   return (
     <div className='d-flex justify-content-center mt-5'>
-    <h1>Page 2!</h1>
+    <h1>Dashboard page ! </h1>
   </div>
   )
 }
 
-export default Page2
+export default Dashboard

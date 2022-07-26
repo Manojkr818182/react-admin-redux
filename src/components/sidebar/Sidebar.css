@@ -15,31 +15,20 @@
     background-color: rgb(110, 197, 235) !important;
 }
 
-.closemenu {
-    color: rgb(36, 202, 72);
-    position: absolute;
-    right: 0;
-    line-height: 20px;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 22px;
-    top: 16px;
-    cursor: pointer;
-}
-
 .mylink {
     color: whitesmoke;
     text-decoration: none;
 }
+
 .mylink.active {
-    color: rgb(196 215 43 / 97%)!important;
+    color: rgba(71, 27, 35, 0.97) !important;
     font-weight: 600;
 }
 
 #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
-    color: rgb(77, 131, 231);
+    color: rgba(71, 27, 35, 0.97);
     border-radius: 3px;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
 }
 
 #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper .pro-item-content {

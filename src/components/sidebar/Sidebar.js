@@ -8,80 +8,70 @@ import {
     SidebarContent,
     SubMenu,
 } from "react-pro-sidebar";
-import { FaList, FaRegHeart } from "react-icons/fa";
-import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-
-import { BiCog } from "react-icons/bi";
+import { FaTachometerAlt, FaUsers, FaShoppingCart } from "react-icons/fa";
+import { FiLogOut, FiSettings } from "react-icons/fi";
 import "react-pro-sidebar/dist/css/styles.css";
 import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
 import img_logo from '../../images/xyz.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleSide } from "../../actions/toggleSidebar";
 
 const Sidebar = () => {
-    const [menuCollapse, setMenuCollapse] = useState(false);
+    const dispatch = useDispatch();
+    const { isCollaps: currentState } = useSelector((state) => state.toggleSidebar);
     const [isActive, setIsActive] = useState(false);
 
-    const menuIconClick = () => {
-        menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
-    };
     const mnj = () => {
-        if (menuCollapse === true) {
-            setMenuCollapse(false);
+        if (currentState === true) {
+            dispatch(toggleSide(!currentState));
             setIsActive(true);
         }
     }
     const mnj2 = () => {
         if (isActive === true) {
-            setMenuCollapse(true);
+            dispatch(toggleSide(!currentState));
             setIsActive(false);
         }
     }
-
     return (
         <>
-            <div id="header">
-                <ProSidebar collapsed={menuCollapse} className="bg-info">
+            <div id="header" >
+                <ProSidebar collapsed={currentState} className="bg-info" onMouseOver={mnj} onMouseLeave={mnj2}>
                     <SidebarHeader>
                         <div className="d-flex justify-content-center py-2">
-                            <img src={img_logo} width={menuCollapse ? "40px" : "65px"} alt="icon" />
-                        </div>
-                        <div className="closemenu" onClick={menuIconClick}>
-                            {menuCollapse ? (
-                                <FiArrowRightCircle />
-                            ) : (
-                                <FiArrowLeftCircle />
-                            )}
+                            <img src={img_logo} width="65px" alt="icon" />
                         </div>
                     </SidebarHeader>
 
-                    <SidebarContent onMouseOver={mnj} onMouseLeave={mnj2} >
+                    <SidebarContent  >
                         <Menu iconShape="square" >
-                            <MenuItem icon={<FiHome />} >
-                                <NavLink to='/' className="mylink">Page 1</NavLink>
+                            <MenuItem icon={<FaTachometerAlt />} >
+                                <NavLink to='/' className="mylink">Dashboard</NavLink>
                             </MenuItem>
-                            <SubMenu icon={<FaRegHeart />} title="Components" >
+                            <SubMenu icon={<FaShoppingCart />} title="Components" >
                                 <MenuItem>
-                                    <NavLink to='/page2' className="mylink"> Page2 </NavLink>
+                                    <NavLink to='/chart' className="mylink"> Chart </NavLink>
                                 </MenuItem>
                                 <MenuItem>
-                                    <NavLink to='/page3' className="mylink"> Page3 </NavLink>
-                                </MenuItem>
-                            </SubMenu>
-                            <SubMenu icon={<FaList />} title="Components" >
-                                <MenuItem>
-                                    <NavLink to='/page4' className="mylink"> Page 4 </NavLink>
-                                </MenuItem>
-                                <MenuItem>
-                                    <NavLink to='/page5' className="mylink"> Page 5 </NavLink>
+                                    <NavLink to='/card' className="mylink"> Cards </NavLink>
                                 </MenuItem>
                             </SubMenu>
-                            <MenuItem icon={<BiCog />}>
-                                <NavLink to='6' className="mylink"> Page 6 </NavLink>
+                            <SubMenu icon={<FaUsers />} title="Components" >
+                                <MenuItem>
+                                    <NavLink to='/component' className="mylink"> Component1 </NavLink>
+                                </MenuItem>
+                                <MenuItem>
+                                    <NavLink to='/component2' className="mylink">  Component2 </NavLink>
+                                </MenuItem>
+                            </SubMenu>
+                            <MenuItem icon={<FiSettings />}>
+                                <NavLink to='setting' className="mylink"> Settings</NavLink>
                             </MenuItem>
                         </Menu>
                     </SidebarContent>
                     <SidebarFooter>
-                        <Menu iconShape="square" onMouseOver={mnj} onMouseOut={mnj2}>
+                        <Menu iconShape="square">
                             <MenuItem icon={<FiLogOut />}>
                                 <NavLink to='/logout' className="mylink"> Logout</NavLink>
                             </MenuItem>

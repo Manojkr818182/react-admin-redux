@@ -1,5 +1,6 @@
 import { LOGIN_SUCCESS, LOGOUT } from "./types";
 import AuthService from '../services/auth.service';
+import authHeader from "../services/authHeader";
 
 export const login = (username, password) => (dispatch) => {
     return AuthService.login(username, password).then(

@@ -32,7 +32,7 @@ const Login = () => {
                 <img src={img_logo} alt="" />
             </div>
             <div className="text-center mt-4 name">
-                XYZ-TSS
+                Login
             </div>
             <form className="p-3 mt-3">
                 <div className="form-field d-flex align-items-center">
