@@ -1,4 +1,4 @@
-const initialState = {isCollaps : true };
+const initialState = {isCollaps : false };
 
 
 export default function mnj2 (state = initialState, action) {

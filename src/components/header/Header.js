@@ -21,7 +21,7 @@ const Header = () => {
                         <FaList onClick={toggleSidebar}/>
                     </div>
                     <NavLink to='/' className=" headerlink ms-4">
-                        <h3>Brand Name</h3>
+                        <h3>iGlobsyn</h3>
                     </NavLink>
                 </Navbar.Brand>
                 <Navbar.Toggle />

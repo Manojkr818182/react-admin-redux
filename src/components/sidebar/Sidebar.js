@@ -49,24 +49,19 @@ const Sidebar = () => {
                             <MenuItem icon={<FaTachometerAlt />} >
                                 <NavLink to='/' className="mylink">Dashboard</NavLink>
                             </MenuItem>
-                            <SubMenu icon={<FaShoppingCart />} title="Components" >
+                            <MenuItem icon={<FaUsers />}>
+                                <NavLink to='/users' className="mylink"> Users</NavLink>
+                            </MenuItem>
+                            <SubMenu icon={<FiSettings />} title="Setting" >
                                 <MenuItem>
-                                    <NavLink to='/chart' className="mylink"> Chart </NavLink>
+                                    <NavLink to='/setting/siteSetting' className="mylink"> Site Settings </NavLink>
                                 </MenuItem>
                                 <MenuItem>
-                                    <NavLink to='/card' className="mylink"> Cards </NavLink>
-                                </MenuItem>
-                            </SubMenu>
-                            <SubMenu icon={<FaUsers />} title="Components" >
-                                <MenuItem>
-                                    <NavLink to='/component' className="mylink"> Component1 </NavLink>
-                                </MenuItem>
-                                <MenuItem>
-                                    <NavLink to='/component2' className="mylink">  Component2 </NavLink>
+                                    <NavLink to='/setting/setApiKey' className="mylink">APK Key  </NavLink>
                                 </MenuItem>
                             </SubMenu>
-                            <MenuItem icon={<FiSettings />}>
-                                <NavLink to='setting' className="mylink"> Settings</NavLink>
+                            <MenuItem icon={<FaShoppingCart />}>
+                                <NavLink to='/mnj' className="mylink"> MNJ</NavLink>
                             </MenuItem>
                         </Menu>
                     </SidebarContent>

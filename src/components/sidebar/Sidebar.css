@@ -8,25 +8,16 @@
 }
 
 .pro-sidebar-inner {
-    background-color: rgb(92, 144, 172) !important;
+    background-color: rgb(54, 74, 85) !important;
 }
 
 .pro-inner-list-item {
-    background-color: rgb(110, 197, 235) !important;
+    background-color: rgb(67, 93, 104) !important;
 }
 
-.mylink {
-    color: whitesmoke;
-    text-decoration: none;
-}
-
-.mylink.active {
-    color: rgba(71, 27, 35, 0.97) !important;
-    font-weight: 600;
-}
 
 #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
-    color: rgba(71, 27, 35, 0.97);
+    color: rgba(74, 109, 206, 0.97);
     border-radius: 3px;
     background-color: whitesmoke;
 }
