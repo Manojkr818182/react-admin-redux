@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 import img_logo from '../../images/xyz.png';
 import './login.css';
 import { login } from '../../actions/auth';
@@ -17,11 +18,12 @@ const Login = () => {
         setLoading(true);
         dispatch(login(userName, password)).then((data) => {
             if (data.success === true) {
-                console.log("success !")
                 setLoading(false);
+                Swal.fire('LoggedIn !', '', 'success');
             } else {
                 setIsError(true);
                 setLoading(false);
+                Swal.fire('Failed to Login !', '', 'error');
             }
         })
 
